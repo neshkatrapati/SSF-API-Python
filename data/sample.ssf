@@ -1,0 +1,64 @@
+<Sentence id='2'>
+1	((	NP	<fs name='NP' drel='rsp:NP2'>
+1.1	subaha	NN	<fs af='subaha,n,f,sg,3,o,0,0' name='subaha' posn='10'>
+1.2	se	PSP	<fs af='se,psp,,,,,,' name='se' posn='20'>
+	))
+2	((	NP	<fs name='NP2' drel='k7t:VGF'>
+2.1	SAma	NN	<fs af='SAma,n,f,sg,3,o,0,0' name='SAma' posn='30'>
+2.2	waka	PSP	<fs af='waka,psp,,,,,,' name='waka' posn='40'>
+	))
+3	((	NP	<fs name='NP3' drel='k1:VGNF'>
+3.1	ugravAxiyoM	NN	<fs af='ugravAxI,n,f,pl,3,o,0,0' name='ugravAxiyoM' posn='50'>
+3.2	xvArA	PSP	<fs af='xvArA,psp,,,,,,' name='xvArA' posn='60'>
+	))
+4	((	VGNF	<fs name='VGNF' drel='nmod__pofinv:NP4'>
+4.1	kie	VM	<fs af='kara,v,m,sg,any,,yA,yA' name='kie' posn='70'>
+4.2	gae	VAUX	<fs af='jA,v,m,sg,any,,yA1,yA1' name='gae' posn='80'>
+	))
+5	((	RBP	<fs name='RBP' drel='adv:VGNF'>
+5.1	lagAwAra	RB	<fs af='lagAwAra,adv,,,,,,' name='lagAwAra' posn='90'>
+	))
+6	((	NP	<fs name='NP4' drel='ccof:CCP'>
+6.1	visPota	NN	<fs af='visPota,n,m,sg,3,o,0,0' name='visPota' posn='100'>
+	))
+7	((	CCP	<fs name='CCP' drel='k7:VGF'>
+7.1	va	CC	<fs af='va,avy,,,,,,' name='va' posn='110'>
+	))
+8	((	NP	<fs name='NP5' drel='ccof:CCP'>
+8.1	golIbArI	NN	<fs af='golIbArI,n,f,sg,3,o,0,0' name='golIbArI' posn='120'>
+8.2	meM	PSP	<fs af='meM,psp,,,,,,' name='meM' posn='130'>
+	))
+9	((	NP	<fs name='NP6' drel='k2:VGF'>
+9.1	kama	QF	<fs af='kama,avy,,,,,,' name='kama' posn='140'>
+9.2	se	RP	<fs af='se,avy,,,,,,' name='se2' posn='150'>
+9.3	kama	QF	<fs af='kama,avy,,,,,,' name='kama2' posn='160'>
+9.4	51	QC	<fs af='51,num,any,any,,any,,' name='51' posn='170'>
+9.5	loga	NN	<fs af='loga,n,m,pl,3,d,0,0' name='loga' posn='180'>
+	))
+10	((	VGF	<fs voicetype='active' name='VGF' stype='declarative' drel='ccof:CCP2'>
+10.1	mAre	VM	<fs af='mAra,v,m,pl,any,,yA,yA' name='mAre' posn='190'>
+10.2	gae	VAUX	<fs af='jA,v,m,pl,any,,yA1,yA1' name='gae2' posn='200'>
+	))
+11	((	CCP	<fs name='CCP2'>
+11.1	Ora	CC	<fs af='Ora,avy,,,,,,' name='Ora' posn='210'>
+	))
+12	((	NP	<fs name='NP7' drel='nmod:NP8'>
+12.1	150	QC	<fs af='150,num,any,any,,o,,' name='150' posn='220'>
+12.2	se	PSP	<fs af='se,psp,,,,,,' name='se3' posn='230'>
+12.3	BI	RP	<fs af='BI,avy,,,,,,' name='BI' posn='240'>
+	))
+13	((	NP	<fs name='NP8' drel='k1:VGF2'>
+13.1	jyAxA	QF	<fs af='jyAxA,avy,,,,,,' name='jyAxA' posn='250'>
+13.2	loga	NN	<fs af='loga,n,m,pl,3,d,0,0' name='loga2' posn='260'>
+	))
+14	((	JJP	<fs name='JJP' drel='pof:VGF2'>
+14.1	jaKmI	JJ	<fs af='jaKmI,adj,any,any,,,,' name='jaKmI' posn='270'>
+	))
+15	((	VGF	<fs voicetype='passive' name='VGF2' stype='declarative' drel='ccof:CCP2'>
+15.1	ho	VM	<fs af='ho,v,any,any,any,,0,0' name='ho' posn='280'>
+15.2	gae	VAUX	<fs af='jA,v,m,pl,any,,yA1,yA1' name='gae3' posn='290'>
+	))
+16	((	BLK	<fs name='BLK' drel='rsym:CCP2'>
+16.1	.	SYM	<fs af='.,punc,,,,,,' name='.' posn='300'>
+	))
+</Sentence>

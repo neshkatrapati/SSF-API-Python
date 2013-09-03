@@ -1,0 +1,97 @@
+1	((	NP	<fs af='child,n,m,p,3,0,,' head=1>
+1.1	children	NNS	<fs af='child,n,m,p,3,0,,'>
+	))		
+2	((	VG	<fs af='watch,v,m,s,3,0,,' aspect=PROG head=2>
+2.1	are	VBP	<fs af='be,v,m,s,3,0,,' head=2>
+2.2	watching	VBG	<fs af='watch,v,m,s,3,0,,' aspect=PROG>
+	))		
+3	((	PP	<fs af='watch,,,,3,0,gvs,reddy' aspect=PRoG head=2> <fs af='watch,,,,3,0,dfmd,reddy' aspect=PROG head=2>
+3.1	in	IN	<fs af='in,v,m,s,3,0,,' aspect=PROG head=3>
+3.2	((	NP	<fs af='the,v,m,s,3,0,,' aspect=PROG head=4>
+3.2.1	the	DT	<fs af='house,v,m,s,3,0,,' aspect=PROG head=3>
+3.2.2	house	NN	<fs af='the,v,m,s,3,0,,' aspect=hgfd>
+	))		
+	))		
+Checked read and print
+
+((	PP	<fs af='watch,,,,3,0,gvs,reddy' aspect=PRoG head=2> <fs af='watch,,,,3,0,dfmd,reddy' aspect=PROG head=2>
+in	IN	<fs af='in,v,m,s,3,0,,' aspect=PROG head=3>
+((	NP	<fs af='the,v,m,s,3,0,,' aspect=PROG head=4>
+the	DT	<fs af='house,v,m,s,3,0,,' aspect=PROG head=3>
+house	NN	<fs af='the,v,m,s,3,0,,' aspect=hgfd>
+	))		
+	))		
+Checked get_nth_child
+
+
+
+size=3
+((	NP	<fs af='child,n,m,p,3,0,,' head=1>
+((	VG	<fs af='watch,v,m,s,3,0,,' aspect=PROG head=2>
+((	PP	<fs af='watch,,,,3,0,gvs,reddy' aspect=PRoG head=2> <fs af='watch,,,,3,0,dfmd,reddy' aspect=PROG head=2>
+Checked getchildren
+
+
+
+size=6
+children	NNS	<fs af='child,n,m,p,3,0,,'>
+are	VBP	<fs af='be,v,m,s,3,0,,' head=2>
+watching	VBG	<fs af='watch,v,m,s,3,0,,' aspect=PROG>
+in	IN	<fs af='in,v,m,s,3,0,,' aspect=PROG head=3>
+the	DT	<fs af='house,v,m,s,3,0,,' aspect=PROG head=3>
+house	NN	<fs af='the,v,m,s,3,0,,' aspect=hgfd>
+Checked getleaves
+
+
+
+size=2
+are	VBP	<fs af='be,v,m,s,3,0,,' head=2>
+watching	VBG	<fs af='watch,v,m,s,3,0,,' aspect=PROG>
+Checked getleaves_child
+
+
+
+size=1
+children	NNS	<fs af='child,n,m,p,3,0,,'>
+Checked get_nodes
+
+
+
+size=5
+((	NP	<fs af='child,n,m,p,3,0,,' head=1>
+children	NNS	<fs af='child,n,m,p,3,0,,'>
+in	IN	<fs af='in,v,m,s,3,0,,' aspect=PROG head=3>
+((	NP	<fs af='the,v,m,s,3,0,,' aspect=PROG head=4>
+house	NN	<fs af='the,v,m,s,3,0,,' aspect=hgfd>
+Checked get_pattern
+
+count of leaf nodes----6
+
+children
+children	NNS	<fs af='child,n,m,p,3,0,,'>
+Checked get_field and get_fields
+
+((	PP	<fs af='watch,,,,3,0,gvs,reddy' aspect=PRoG head=2> <fs af='watch,,,,3,0,dfmd,reddy' aspect=PROG head=2>
+((	NP	<fs af='child,n,m,p,3,0,,' head=1>
+Checked get_next_node & get_previous_node
+
+1	((	NP	<fs af='child,n,m,p,3,0,,' head=1>
+1.1	children	NNS	<fs af='child,n,m,p,3,0,,'>
+	))		
+2	iiit	NNP	<fs loc=hyd>
+3	((	VG	<fs af='watch,v,m,s,3,0,,' aspect=PROG head=2>
+3.1	are	VBP	<fs af='be,v,m,s,3,0,,' head=2>
+3.2	watching	VBG	<fs af='watch,v,m,s,3,0,,' aspect=PROG>
+	))		
+4	((	PP	<fs af='watch,,,,3,0,gvs,reddy' aspect=PRoG head=2> <fs af='watch,,,,3,0,dfmd,reddy' aspect=PROG head=2>
+4.1	in	IN	<fs af='in,v,m,s,3,0,,' aspect=PROG head=3>
+4.2	((	NP	<fs af='the,v,m,s,3,0,,' aspect=PROG head=4>
+4.2.1	the	DT	<fs af='house,v,m,s,3,0,,' aspect=PROG head=3>
+4.2.2	house	NN	<fs af='the,v,m,s,3,0,,' aspect=hgfd>
+	))		
+	))		
+Checked insert_node_position
+
+<fs loc=hyd>
+Checked print_attr_of_or_node
+
