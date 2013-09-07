@@ -15,6 +15,9 @@ cdef class or_node:
 	
 # Experimental : Children Class
 cdef class Children(object):
+	"""
+	Represents the children of the node 
+	"""
 	cdef node
 	cdef iter_index
 	cdef length
@@ -36,8 +39,15 @@ cdef class Children(object):
 	def __len__(self):
 		return self.node.get_length_of_children()
 
+	def insert(self,node,position):
+		self.node.insert_node_into_position(node,position)
+
+
 
 cdef class node(object):
+	"""
+	Represents the node class
+	"""
 	cdef cssf.node *_node_obj
 	cdef Children _children
 	def __cinit__(self):
@@ -77,6 +87,12 @@ cdef class node(object):
 
 	def modify_field(self,int num,char string[]):
 		return cssf.modify_field(self._node_obj,num,string)
+
+	def insert_node_into_position(self,node ins_node,int position):
+		return cssf.insert_node_into_position(self._node_obj,ins_node._node_obj,position)
+
+	def delete(self):
+		return cssf.delete_node(self._node_obj)
 
 	# Start of Property Methods
 

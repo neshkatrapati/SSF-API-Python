@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Node and Children &mdash; SSF-API-Python 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="SSF-API-Python 0.0.1 documentation" href="index.html" />
+    <link rel="up" title="Detailed Introduction to the API" href="api.html" />
+    <link rel="prev" title="Detailed Introduction to the API" href="api.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="Detailed Introduction to the API"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">SSF-API-Python 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="api.html" accesskey="U">Detailed Introduction to the API</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="node-and-children">
+<h1>Node and Children<a class="headerlink" href="#node-and-children" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Of all the structures in the API, node by far is the most important.
+Most of the operations take place on it and most of the other structures are parts of the node itself.</p>
+</div>
+<div class="section" id="structure-of-the-node">
+<h2>Structure of the Node<a class="headerlink" href="#structure-of-the-node" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="node">
+<em class="property">class </em><tt class="descname">node</tt><a class="headerlink" href="#node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="token">
+<tt class="descname">token</tt><a class="headerlink" href="#token" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is represented by the second column of the SSF file.
+This is generally the word or the chunk marking.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tag">
+<tt class="descname">tag</tt><a class="headerlink" href="#tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is represented by the thrid column of the SSF file
+This is generally the POS or the CHUNK tag.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="children">
+<tt class="descname">children</tt><a class="headerlink" href="#children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Children of the node represented by the Children class.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="parent">
+<tt class="descname">parent</tt><a class="headerlink" href="#parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>A node object representing the parent of the node.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-of-the-node">
+<h2>Methods of the Node<a class="headerlink" href="#methods-of-the-node" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="node.read_ssf_from_file">
+<tt class="descclassname">node.</tt><tt class="descname">read_ssf_from_file</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#node.read_ssf_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the contents of the ssf file into the node object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="node.print_tree">
+<tt class="descclassname">node.</tt><tt class="descname">print_tree</tt><big>(</big><big>)</big><a class="headerlink" href="#node.print_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the tree to stdout</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span> <span class="n">node</span> <span class="o">=</span> <span class="n">ssf</span><span class="o">.</span><span class="n">node</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span> <span class="n">node</span><span class="o">.</span><span class="n">read_ssf_from_file</span><span class="p">(</span><span class="s">&quot;sample.ssf&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span> <span class="n">node</span><span class="o">.</span><span class="n">print_tree</span><span class="p">()</span>
+<span class="go">1       &lt;Sentence id=&#39;2&#39;&gt;</span>
+<span class="go">2       ((      NP      &lt;fs name=&#39;NP&#39; drel=&#39;rsp:NP2&#39;&gt;</span>
+<span class="go">2.1     subaha  NN      &lt;fs af=&#39;subaha,n,f,sg,3,o,0,0&#39; name=&#39;subaha&#39; posn=&#39;10&#39;&gt;</span>
+<span class="go">2.2     se      PSP     &lt;fs af=&#39;se,psp,,,,,,&#39; name=&#39;se&#39; posn=&#39;20&#39;&gt;</span>
+<span class="go">        ))</span>
+<span class="go">3       ((      NP      &lt;fs name=&#39;NP2&#39; drel=&#39;k7t:VGF&#39;&gt;</span>
+<span class="go">3.1     SAma    NN      &lt;fs af=&#39;SAma,n,f,sg,3,o,0,0&#39; name=&#39;SAma&#39; posn=&#39;30&#39;&gt;</span>
+<span class="go">3.2     waka    PSP     &lt;fs af=&#39;waka,psp,,,,,,&#39; name=&#39;waka&#39; posn=&#39;40&#39;&gt;</span>
+<span class="go">        ))</span>
+<span class="go">        &lt;/Sentence&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="node.get_field">
+<tt class="descclassname">node.</tt><tt class="descname">get_field</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#node.get_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the specific field of the node.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">node</span><span class="o">.</span><span class="n">print_tree</span><span class="p">()</span> <span class="c"># Assume</span>
+<span class="go">        2       ((      NP      &lt;fs name=&#39;NP&#39; drel=&#39;rsp:NP2&#39;&gt;</span>
+<span class="go">        2.1     subaha  NN      &lt;fs af=&#39;subaha,n,f,sg,3,o,0,0&#39; name=&#39;subaha&#39; posn=&#39;10&#39;&gt;</span>
+<span class="go">        2.2     se      PSP     &lt;fs af=&#39;se,psp,,,,,,&#39; name=&#39;se&#39; posn=&#39;20&#39;&gt;</span>
+<span class="go">                ))</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">node</span><span class="o">.</span><span class="n">get_field</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c"># Also node.token</span>
+<span class="go">((</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">node</span><span class="o">.</span><span class="n">get_field</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c"># Also node.tag</span>
+<span class="go">NP</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Node and Children</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#structure-of-the-node">Structure of the Node</a></li>
+<li><a class="reference internal" href="#methods-of-the-node">Methods of the Node</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="previous chapter">Detailed Introduction to the API</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/node_and_children.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="Detailed Introduction to the API"
+             >previous</a> |</li>
+        <li><a href="index.html">SSF-API-Python 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="api.html" >Detailed Introduction to the API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Ganesh Katrapati.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

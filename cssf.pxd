@@ -109,3 +109,7 @@ cdef extern from "c_api_v2/c_api_v2.h":
     node *get_parent(node *N)
 
     int modify_field(node *N, int number,char str[])
+
+    int insert_node_into_position(node *parent, node *child, int position)
+
+    int delete_node(node *N)

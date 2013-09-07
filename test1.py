@@ -39,9 +39,14 @@ else:
 	print "Parent of target node",time.time() - t 
 
 	t = time.time()
-	target_node.children[0].token = "NNP"
+	target_node.children[0].tag = "NNP"
 	print "Modifying tag attribute of first child",time.time() - t 
 
+	t = time.time()
+	node.children.insert(target_node,node_number)
+	print "Inserting nodes",time.time() - t 
+
+	
 
 	#node.get(node_number).print_tree()
 
