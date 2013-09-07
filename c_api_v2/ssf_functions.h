@@ -401,3 +401,7 @@ list_of_nodes *get_pattern(int fieldnumber, char pattern[], node *tree)
 	return tmp;
 }
 
+// New Addition for the Python API 
+int get_length_of_children(node *N){
+	return g_list_length(N -> childs);
+}

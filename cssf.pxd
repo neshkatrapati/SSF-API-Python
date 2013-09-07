@@ -103,3 +103,9 @@ cdef extern from "c_api_v2/c_api_v2.h":
     char *get_field(node *N, int number )
 
     char *get_fields (node *N )
+
+    int get_length_of_children(node *N)
+
+    node *get_parent(node *N)
+
+    int modify_field(node *N, int number,char str[])

@@ -13,10 +13,37 @@ cdef class or_node:
 	def __cinit__(self):
 		pass
 	
-cdef class node:
+# Experimental : Children Class
+cdef class Children(object):
+	cdef node
+	cdef iter_index
+	cdef length
+	def __cinit__(self, node):
+		self.node = node
+		self.iter_index = -1
+		self.length = len(self)
+
+	def __getitem__(self,n):
+		return self.node.get_nth_child(n)
+	def __iter__(self):
+		return self
+	def __next__(self):
+		if self.iter_index < self.length + 1:
+			self.iter_index += 1
+			return self.node.get_nth_child(self.iter_index)
+		else:
+			raise StopIteration
+	def __len__(self):
+		return self.node.get_length_of_children()
+
+
+cdef class node(object):
 	cdef cssf.node *_node_obj
+	cdef Children _children
 	def __cinit__(self):
 		self._node_obj = cssf.create_tree()
+		self._children = Children(self)
+		
 		
 	def read_ssf_from_file(self,char *file_name):
 		#cdef libc.stdio.FILE *fp = libc.stdio.fopen(file_name,"r")
@@ -24,9 +51,6 @@ cdef class node:
 
 	def print_tree(self):
 		cssf.print_tree(self._node_obj)
-
-	def __getitem__(self,n):
-		return self.get_nth_child(n)
 
 	def get_nth_child(self,int n):
 		cdef cssf.node *nd = cssf.get_nth_child(self._node_obj,n)
@@ -36,34 +60,50 @@ cdef class node:
 
 	def get_field(self,int n):
 		cdef char* field = cssf.get_field(self._node_obj,n)
-		return str(field)
+		return field
 
 	def get_fields(self):
 		cdef char* fields = cssf.get_fields(self._node_obj)
 		return fields
 
+	def get_length_of_children(self):
+		return cssf.get_length_of_children(self._node_obj)
+
+	def get_parent(self):
+		cdef cssf.node *parent = cssf.get_parent(self._node_obj)
+		cdef node _parent = node()
+		_parent._node_obj  = parent
+		return _parent
+
+	def modify_field(self,int num,char string[]):
+		return cssf.modify_field(self._node_obj,num,string)
+
 	# Start of Property Methods
 
-	@property
-	def token(self):
-		return self.get_field(1)
-	@token.setter
-	def token(self, value):
-		#self._node_obj.node_tkn = value	
-		pass
+	property token:
+		def __get__(self):
+			return self.get_field(1)
+		def __set__(self, value):
+			self.modify_field(1,value)	
+		
+	property tag:
+		def __get__(self):
+			return self.get_field(2)
+		def __set__(self, value):
+			self.modify_field(2,value)
+		
 
-	@property
-	def tag(self):
-	    return self.get_field(2)
-	@tag.setter
-	def tag(self, value):
-	    pass
+	property children:
+		def __get__(self):
+			return self._children	
 
-
+	property parent:
+		def __get__(self):
+			return self.get_parent()
 	
 
 	def __str__(self):
-		pass
+		return self.token
 		
 
 cdef class list_of_nodes:
