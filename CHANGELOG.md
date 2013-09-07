@@ -1,7 +1,6 @@
 #CHANGELOG 
 ## Version 0.0.1
 * Commit Name : "Added Some Changes"
-### Changes
 * Added a method in the C-Api in ssf_functions.h.
 		
 		// Returns the length of the children given
