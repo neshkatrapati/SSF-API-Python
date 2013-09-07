@@ -98,3 +98,8 @@ cdef extern from "c_api_v2/c_api_v2.h":
 
     void print_node_without_index(node *N)
 
+    node *get_nth_child(node *N, int number)
+
+    char *get_field(node *N, int number )
+
+    char *get_fields (node *N )
